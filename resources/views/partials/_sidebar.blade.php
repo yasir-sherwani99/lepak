@@ -34,25 +34,28 @@
                   <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                     
-                      <li><a href="{{ url('admin') }}">Admin Registration</a></li>
-                      <li><a href="{{ url('employee') }}">Employee Registration</a></li>
-                      <li><a href="{{ url('device') }}">Device Registration</a></li>
+                      <li><a href="{{ route('admin.create') }}">Admin Registration</a></li>
+                      <li><a href="{{ route('employee.create') }}">Employee Registration</a></li>
+                      <li><a href="{{ route('device.create') }}">Device Registration</a></li>
                       
                     </ul>
                   </li>
                   <li><a><i class="fa fa-desktop"></i> Availability <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ url('site_available') }}">Sites Available</a></li>
-                      <li><a href="{{ url('emp_available') }}">Employees Available</a></li>
-                      <li><a href="{{ url('device_available') }}">Devices Allocation</a></li>
+                      <li><a href="{{ route('site.index') }}">Sites Availability</a></li>
+                      <li><a href="{{ route('employee.index') }}">Employees Availability</a></li>
+                      <li><a href="{{ route('admin.index') }}">Admins Availability</a></li>
+                      <li><a href="{{ route('device.index') }}">Devices Allocation</a></li>
+                      <li><a href="{{ route('location.index') }}">Location Availability</a></li>
+                      <li><a href="{{ route('city.index') }}">Cities Availability</a></li>
                       
                     </ul>
                   </li>
                   <li><a><i class="fa fa-desktop"></i> Manage Locations <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ url('location_registration') }}">Location Registration</a></li>
-                      <li><a href="{{ url('site_registration') }}">Sites Registration</a></li>
-                      <li><a href="{{ url('city_registration') }}">City Registration</a></li>
+                      <li><a href="{{ route('location.create') }}">Location Registration</a></li>
+                      <li><a href="{{ route('site.create') }}">Sites Registration</a></li>
+                      <li><a href="{{ route('city.create') }}">City Registration</a></li>
                     
                       
                     </ul>

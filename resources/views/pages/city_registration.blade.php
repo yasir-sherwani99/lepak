@@ -20,9 +20,18 @@
                     </ul>
                     <div class="clearfix"></div>
                   </div>
+                  @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                  @endif
                   <div class="x_content">
 
-                    <form class="form-horizontal form-label-left" novalidate>
+                    <form class="form-horizontal form-label-left" data-parsley-validate action="{{ action('CityController@store') }}" method="post">
 
                       <span class="section">Enter City Info</span>
 
@@ -30,13 +39,14 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">City Name <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="Enter City" required="required" type="text">
+                          <input id="name" class="form-control col-md-7 col-xs-12" data-parsley-required="true" name="cname" placeholder="Enter City" type="text">
                         </div>
                       </div>
                      
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
+                          <input type="hidden" name="_token" value="{{ csrf_token() }}">
                           <input type="submit" name="submit" value="Submit" class="btn btn-primary">
                           
                         </div>

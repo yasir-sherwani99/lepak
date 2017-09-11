@@ -22,7 +22,7 @@
                   </div>
                   <div class="x_content">
 
-                    <form class="form-horizontal form-label-left" novalidate>
+                    <form class="form-horizontal form-label-left" data-parsley-validate action="{{ action('SitesController@store') }}" method="post">
 
                       <span class="section">Enter Site Info</span>
 
@@ -30,26 +30,27 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Site Name <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="Enter Site name" required="required" type="text">
+                         <input id="name" class="form-control col-md-7 col-xs-12" name="sname" placeholder="Enter City" data-parsley-required="true" type="text">
                         </div>
                       </div>
                      
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Location<span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="location">Location<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select name="location" class="form-control col-md-7 col-xs-12">
+                          <select name="location" class="form-control col-md-7 col-xs-12" data-parsley-required="true">
                             <option value="">Select Location</option>
-                            <option value="">Gulberg</option>
+                            @foreach($loc as $lloc)
+                              <option value="{{ $lloc->id }}">{{ $lloc->location }}</option>
+                            @endforeach
                           </select>
                         </div>
                       </div>
-                      
-                    
-                      
+                     
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
+                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                           <input type="submit" name="submit" value="Submit" class="btn btn-primary">
                           
                         </div>

@@ -55,6 +55,10 @@ class PagesController extends Controller
 
     }
 
+    public function getAvailable_location(){
+        return view('pages.available_location');
+    }
+
 
 
 

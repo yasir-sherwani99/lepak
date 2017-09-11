@@ -6,7 +6,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Projects <small>Listing design</small></h3>
+                <h3>Emloyee Availability</h3>
               </div>
 
               <div class="title_right">
@@ -27,38 +27,30 @@
               <div class="col-md-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Projects</h2>
+                    <h2>Employ lists</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      
+                     
                       </li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
 
-                    <p>Simple table with project listing with progress and editing options</p>
+                    <p>listed available employee and information with specified actions</p>
 
                     <!-- start project list -->
                     <table class="table table-striped projects">
                       <thead>
                         <tr>
                           <th style="width: 1%">#</th>
-                          <th style="width: 20%">Project Name</th>
-                          <th>Team Members</th>
-                          <th>Project Progress</th>
+                          <th style="width: 20%">Operator Name</th>
+                          <th>Profile Pic</th>
+                          <th>Employee Workout</th>
                           <th>Status</th>
-                          <th style="width: 20%">#Edit</th>
+                          <th style="width: 20%">Actions</th>
                         </tr>
                       </thead>
                       <tbody>

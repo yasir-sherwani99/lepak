@@ -1,9 +1,8 @@
 @extends('main')
 
-
 @section('content')
 
-<!-- Form  -->
+  <!-- Form  -->
   <div class="right_col" role="main">
           <div class="">
             
@@ -21,42 +20,64 @@
                     </ul>
                     <div class="clearfix"></div>
                   </div>
+                  @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                  @endif
+                 
                   <div class="x_content">
 
-                    <form class="form-horizontal form-label-left" data-parsley-validate>
+                    <form class="form-horizontal form-label-left" action="{{ action('DeviceController@store') }}" method="post"  data-parsley-validate>
 
-                      <span class="section">Device Info</span>
+                      <span class="section">Enter City Info</span>
 
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Serial Number <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Device Name <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="location" class="form-control col-md-7 col-xs-12" data-parsley-required="true" name="location" placeholder="Enter location" type="text">
+                          <input id="name" class="form-control col-md-7 col-xs-12" name="dname" placeholder="Enter City" type="text">
                         </div>
                       </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Select Vehical <span class="required">*</span>
+                       <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Device Manufacturer <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select class="form-control" id="vehicle" data-parsley-required="true">
-                            <option>Bike</option>
-                            <option>Car</option>
-                          </select>
+                          <input id="name" class="form-control col-md-7 col-xs-12" name="manufact" placeholder="Enter City" type="text">
                         </div>
                       </div>
-                        <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Assign To <span class="required">*</span>
+                       <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Device Serial <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="cnic" class="form-control col-md-7 col-xs-12"  data-validate-words="2" name="cnic" placeholder="Enter Employee CNIC" required="required" type="number">
+                          <input id="name" class="form-control col-md-7 col-xs-12" name="serial" placeholder="Enter City" type="text">
                         </div>
                       </div>
-                      
+                       <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Device Mac <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="name" class="form-control col-md-7 col-xs-12" name="mac" placeholder="Enter City" type="number">
+                        </div>
+                      </div>
+                       <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Device Quantity <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="name" class="form-control col-md-7 col-xs-12" name="dqty" placeholder="Enter City" type="text">
+                        </div>
+                      </div>
+                     
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
+                          <input type="hidden" name="_token" value="{{ csrf_token() }}">
                           <input type="submit" name="submit" value="Submit" class="btn btn-primary">
-                         
+                          
                         </div>
                       </div>
                     </form>
@@ -68,5 +89,4 @@
         </div>
 
         <!-- /Form  -->
-
 @endsection

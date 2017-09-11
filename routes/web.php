@@ -11,15 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('index', 'PagesController@getWebsite');
-Route::get('admin', 'PagesController@getAdmin');
+Route::resource('city', 'CityController');
+Route::resource('site', 'SitesController');
+Route::resource('location', 'LocationController');
+Route::resource('device', 'DeviceController');
+Route::resource('employee', 'EmployeeController');
+Route::resource('admin', 'AdminController');
+
+/*
 Route::get('employee', 'PagesController@getEmployee');
 Route::get('terminal', 'PagesController@getTerminal');
-Route::get('device', 'PagesController@getDevice');
+
 
 
 Route::get('site_available', 'PagesController@getSites');
@@ -30,4 +34,11 @@ Route::get('city_registration', 'PagesController@getCity_registration');
 Route::get('site_registration', 'PagesController@getSite_registration');
 
 Route::get('location_registration', 'PagesController@getLocation_registration');
+
+Route::get('available_location', 'PagesController@getAvailable_location');
+
+*/
+
+
+
 
